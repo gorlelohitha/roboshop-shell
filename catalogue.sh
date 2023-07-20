@@ -9,7 +9,7 @@ curl -o /tmp/catalogue.zip https://roboshop-artifacts.s3.amazonaws.com/catalogue
 cd /app
 unzip /tmp/catalogue.zip
 cd /app
-npm installsystemctl
+npm install
 yum install mongodb-org-shell -y
 mongo --host mongodb.devopsb17.online </app/schema/catalogue.js
 systemctl daemon-reload
