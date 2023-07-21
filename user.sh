@@ -8,8 +8,8 @@ mkdir /app
 curl -o /tmp/user.zip https://roboshop-artifacts.s3.amazonaws.com/user.zip
 cd /app
 unzip /tmp/user.zip
-cd /app
-npm installsystemctl
+
+npm install
 yum install mongodb-org-shell -y
 mongo --host mongodb.devopsb17.online </app/schema/user.js
 systemctl daemon-reload
