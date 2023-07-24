@@ -51,7 +51,7 @@ systemctl restart ${component} &>>${log}
 
 
 
-func-maven()
+func_maven()
 {
   echo ">>>>>>>>>>> create ${component} service <<<<<<<<"
 
