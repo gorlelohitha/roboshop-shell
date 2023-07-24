@@ -1,4 +1,5 @@
-nodejs{
+func_nodejs()
+{
 log=/tmp/roboshop.log
 echo ">>>>>>>>>>> create ${component} service <<<<<<<<"
 
@@ -46,12 +47,11 @@ echo ">>>>>>>>>>> Start User Service <<<<<<<<"
 systemctl daemon-reload &>>${log}
 systemctl enable ${component} &>>${log}
 systemctl restart ${component} &>>${log}
-
-
-
-
-
-
-
-
 }
+
+
+
+
+
+
+
