@@ -2,7 +2,7 @@ func_schema_setup(){
   if [ "${schema_type}" == "mongodb" ]; then
 echo ">>>>>>>>>>> Install Mongo Client <<<<<<<<"
 
-yum install mongodb-org-shell -y $>>${log}
+yum install mongodb-org-shell -y &>>${log}
 
 
 mongo --host MONGODB-SERVER-IPADDRESS </app/schema/catalogue.js &>>${log}
