@@ -1,5 +1,5 @@
 func_schema_setup(){
-  if ["${schema_type}" "mongodb"];then
+  if [ "${schema_type}" == "mongodb" ]; then
 echo ">>>>>>>>>>> Install Mongo Client <<<<<<<<"
 
 yum install mongodb-org-shell -y $>>${log}
