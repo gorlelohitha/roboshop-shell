@@ -1,4 +1,4 @@
-func_schema_set-up(){
+func_schema_setup(){
   if ["${schema_type}" "mongodb"];then
 echo ">>>>>>>>>>> Install Mongo Client <<<<<<<<"
 
