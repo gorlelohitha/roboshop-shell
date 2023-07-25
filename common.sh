@@ -13,17 +13,21 @@ fi
 func_nodejs()
 {
 log=/tmp/roboshop.log
+
 echo ">>>>>>>>>>> create ${component} service <<<<<<<<"
+
 cp ${component}.service /etc/systemd/system/${component}.service &>>${log}
  echo ">>>>>>>>>>> create Mongodb Repo <<<<<<<<"
-
+echo $?
 cp mongo.repo /etc/yum.repos.d/mongo.repo &>>${log}
 echo ">>>>>>>>>>> Install NodeJs <<<<<<<<"
 
 curl -sL https://rpm.nodesource.com/setup_lts.x | bash &>>${log}
+ echo $?
  echo ">>>>>>>>>>> Install NodeJs <<<<<<<<"
 
 yum install nodejs -y &>>${log}
+echo $?
  echo ">>>>>>>>>>> Create Application User <<<<<<<<"
 
 useradd roboshop &>>${log}
