@@ -1,3 +1,15 @@
+func_schema_set-up(){
+  if ["${schema_type}" "mongodb"];then
+echo ">>>>>>>>>>> Install Mongo Client <<<<<<<<"
+
+yum install mongodb-org-shell -y $>>${log}
+
+
+mongo --host MONGODB-SERVER-IPADDRESS </app/schema/catalogue.js$>>${log}
+fi
+}
+
+
 func_nodejs()
 {
 log=/tmp/roboshop.log
@@ -32,14 +44,7 @@ cd /app
  echo ">>>>>>>>>>> Download Nodes Js <<<<<<<<"
 
 npm install &>>${log}
-echo ">>>>>>>>>>> Install Mongo Client <<<<<<<<"
-
-yum install mongodb-org-shell -y &>>${log}
-
-echo ">>>>>>>>>>> Load User Schema <<<<<<<<"
-
-
-mongo --host MONGODB-SERVER-IPADDRESS </app/schema/${component}.js &>>${log}
+func_schema_setup
 
 echo ">>>>>>>>>>> Start User Service <<<<<<<<"
 systemctl daemon-reload &>>${log}
