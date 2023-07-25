@@ -5,7 +5,7 @@ echo ">>>>>>>>>>> Install Mongo Client <<<<<<<<"
 yum install mongodb-org-shell -y $>>${log}
 
 
-mongo --host MONGODB-SERVER-IPADDRESS </app/schema/catalogue.js$>>${log}
+mongo --host MONGODB-SERVER-IPADDRESS </app/schema/catalogue.js &>>${log}
 fi
 }
 
